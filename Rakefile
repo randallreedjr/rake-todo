@@ -45,4 +45,10 @@ namespace :user do
   task :send_summary, [:email] => [:environment] do |t, args|
     puts "Sending summary to user with #{args[:email]}"
   end
+
+  task :todo_reminder => [:environment] do
+    my_ruby_home = ENV["MY_RUBY_HOME"]
+    puts "ENV includes #{my_ruby_home}"
+    puts "Sending todo reminder to #{ENV["EMAIL"]}"
+  end
 end
