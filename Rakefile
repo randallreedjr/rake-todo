@@ -7,3 +7,19 @@ end
 task :default do
   puts "Hello, from default task!"
 end
+
+task :environment do
+  require_relative './config/environment'
+end
+
+task :upcoming_todos => [:environment] do
+  User.with_upcoming_todos.each do |user|
+    puts "Emailing #{user}"
+  end
+end
+
+task :overdue_todos => [:environment] do
+  User.with_overdue_todos.each do |user|
+    puts "Emailing #{user}"
+  end
+end
