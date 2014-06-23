@@ -150,7 +150,11 @@ describe 'Rakefile' do
       end
       xit 'uses an ENV variable of EMAIL' do
       end
-      xit 'emails the user a todo reminder' do
+      it 'emails the user a todo reminder' do
+        ENV['EMAIL'] = "student@flatironschool.com"
+        expect($stdout).to receive(:puts).once.with(/ENV/)
+        expect($stdout).to receive(:puts).once.with("Sending todo reminder to student@flatironschool.com")
+        task.invoke()
       end
     end
   end
