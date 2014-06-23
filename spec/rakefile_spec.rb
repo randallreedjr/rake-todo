@@ -143,10 +143,10 @@ describe 'Rakefile' do
       end
     end
 
-    # describe "todo_reminder" do
-    #   it 'defines a prerequisite of environment'
-    #   it 'uses an ENV variable of EMAIL'
-    #   it 'emails the user a todo reminder'
-    # end
+    describe "todo_reminder" do
+      xit 'defines a prerequisite of environment'
+      xit 'uses an ENV variable of EMAIL'
+      xit 'emails the user a todo reminder'
+    end
   end
 end
