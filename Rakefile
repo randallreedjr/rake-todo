@@ -39,3 +39,10 @@ task :console => [:environment] do
   load './bin/console'
   exit
 end
+
+namespace :user do
+  desc "Send a summary to a User"
+  task :send_summary, [:email] => [:environment] do |t, args|
+    puts "Sending summary to user with #{args[:email]}"
+  end
+end
